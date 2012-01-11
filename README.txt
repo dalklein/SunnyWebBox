@@ -1,4 +1,3 @@
-.. use rst2pdf to convert this document to a PDF file ..
 
 ===============================
  SunnyWebBox - RPC with Python
@@ -9,7 +8,7 @@ Introduction
 
 **This software is not much tested and should be used with care!**
 
-The `Sunny WebBox`_ (made by SMS Solar Technology) is a monitoring system for 
+The `Sunny WebBox`_ (made by SMA Solar Technology) is a monitoring system for 
 solar plants which offers RPC (remote procedure calls) to access the data of 
 the box. These calls are made of JSON objects which are transported by HTTP.
 
