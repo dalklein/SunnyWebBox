@@ -5,7 +5,7 @@
 # license: BSD
 # purpose: make RPC to a Sunny WebBox, a monitoring system for solar plants
 #
-# http://www.sma.de/de/produkte/monitoring-systems/sunny-webbox.html
+# http://www.sma.de/en/produkte/monitoring-systems/sunny-webbox.html
 #
 # Use the class SunnyWebBox in your code or run this file as a script to test
 # the class. First parameter is the hostname or IP of the box. A password can 
