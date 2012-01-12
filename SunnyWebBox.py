@@ -22,8 +22,10 @@ import json, httplib, hashlib
 
 class Counter:
     """generate increasing numbers with every call - just for convenience"""
+    
     def __init__(self, start=0):
         self.i = start
+
     def __call__(self):
         i = self.i
         self.i += 1
@@ -31,9 +33,7 @@ class Counter:
 
 
 class SunnyWebBox(object):
-    """
-    Class to make RPC to a 'Sunny WebBox', a monitoring system for solar plants
-    """
+    """communication with a 'Sunny WebBox', a monitoring system for solar plants"""
     
     def __init__(self, host='1.2.3.4', password=''):
         self.host = host
@@ -86,7 +86,11 @@ class SunnyWebBox(object):
     def getProcessData(self, channels):
         res = self._rpc(self.newRequest('GetProcessData', devices=channels))
         # reorder data structure: {devKey: {dict of channels}, ...}
-        return {l['key']: l['channels'] for l in res['devices']}
+        # return {l['key']: l['channels'] for l in res['devices']}
+        r = {}
+        for l in res['devices']:
+            r[l['key']] = l['channels']
+        return r
         
     def getParameterChannels(self, deviceKey):
         res = self._rpc(self.newRequest('GetParameterChannels', withPW=True, device=deviceKey))
@@ -95,7 +99,11 @@ class SunnyWebBox(object):
     def getParameter(self, channels):
         res = self._rpc(self.newRequest('GetParameter', withPW=True, devices=channels))
         # reorder data structure: {devKey: {dict of channels}, ...}
-        return {l['key']: l['channels'] for l in res['devices']}
+        # return {l['key']: l['channels'] for l in res['devices']}
+        r = {}
+        for l in res['devices']:
+            r[l['key']] = l['channels']
+        return r
         
     def setParameter(self, *args):
         raise Exception('Not yet implemented!')
