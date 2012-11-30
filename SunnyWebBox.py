@@ -1,15 +1,16 @@
 #!/usr/bin/env python
-# version: 0.2
-# date:    2012-01-10
+# version: 0.3
+# date:    2012-11-30
 # author:  Joerg Raedler joerg@j-raedler.de
 # license: BSD
 # purpose: make RPC to a Sunny WebBox, a monitoring system for solar plants
 #
 # http://www.sma.de/en/produkte/monitoring-systems/sunny-webbox.html
 #
-# Use the class SunnyWebBox in your code or run this file as a script to test
-# the class. First parameter is the hostname or IP of the box. A password can 
-# be provided with an optional second parameter.
+# Use the classes SunnyWebBoxHTTP or SunnyWebBoxUDPStream in your code 
+# or run this file as a script to test the classes. First parameter is 
+# the hostname or IP of the box. A password can be provided with an 
+# optional second parameter.
 #
 # Example: python SunnyWebBox.py 123.123.123.123 "foobar"
 #
